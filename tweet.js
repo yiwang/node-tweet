@@ -60,7 +60,7 @@ http.createServer(function(req, res){
 		var timeout = setTimeout(function(){
 			res.writeHead(200, {"Content-Type":"text/plain"});
 			res.end(JSON.stringify([]));
-			tweet_emitter.removeListener(listener);
+			tweet_emitter.removeListener("tweets", listener);
 		}, 10000);
 	}else{
 		load_static_file(uri, res);
